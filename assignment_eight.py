@@ -5,6 +5,12 @@ root.title('Calculator')
 #variables
 
 
+#make an entry box, give a text variable (entry (StringVar())
+def press_three():
+    text =entry.get()
+    text += "3"
+    entry.set(text)
+
 #operations
 add = tk.Button(root, text="+", )
 add.grid(row=, column=, columnspan=)
