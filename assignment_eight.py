@@ -2,64 +2,65 @@ import tkinter as tk
 
 root = tk.Tk()
 root.title('Calculator')
-#variables
+# variables
+entry = tk.StringVar()
 
-
-#make an entry box, give a text variable (entry (StringVar())
+# make an entry box, give a text variable (entry (StringVar())
 def press_three():
-    text =entry.get()
+    text = entry.get()
     text += "3"
     entry.set(text)
 
-#operations
+# text box
+entry_box = tk.Entry(root, text=entry)
+entry_box.grid(row=1, column=1, columnspan=3)
+
+# operations
 add = tk.Button(root, text="+", )
-add.grid(row=, column=, columnspan=)
+add.grid(row=2, column=4)
 
 subtract = tk.Button(root, text="-", )
-subtract.grid(row=, column=, columnspan=)
+subtract.grid(row=3, column=4)
 
 multiply = tk.Button(root, text="x", )
-multiply.grid(row=, column=, columnspan=)
+multiply.grid(row=2, column=5)
 
 divide = tk.Button(root, text="/", )
-divide.grid(row=, column=, columnspan=)
+divide.grid(row=3, column=5)
 
-calculate = tk.Button(root, text="=", command=)
-calculate.grid(row=, column=, columnspan=)
+calculate = tk.Button(root, text="=")
+calculate.grid(row=4, column=5)
 
-#numbers
-calculate = tk.Button(root, text="0", command=)
-calculate.grid(row=, column=, columnspan=)
+# numbers
+num0 = tk.Button(root, text="0")
+num0.grid(row=4, column=4)
 
-calculate = tk.Button(root, text="1", command=)
-calculate.grid(row=, column=, columnspan=)
+num1 = tk.Button(root, text="1")
+num1.grid(row=2, column=1)
 
-calculate = tk.Button(root, text="2", command=)
-calculate.grid(row=, column=, columnspan=)
+num2 = tk.Button(root, text="2")
+num2.grid(row=2, column=2)
 
-calculate = tk.Button(root, text="3", command=)
-calculate.grid(row=, column=, columnspan=)
+num3 = tk.Button(root, text="3", command=press_three)
+num3.grid(row=2, column=3)
 
-calculate = tk.Button(root, text="4", command=)
-calculate.grid(row=, column=, columnspan=)
+num4 = tk.Button(root, text="4")
+num4.grid(row=3, column=1)
 
-calculate = tk.Button(root, text="5", command=)
-calculate.grid(row=, column=, columnspan=)
+num5 = tk.Button(root, text="5")
+num5.grid(row=3, column=2)
 
-calculate = tk.Button(root, text="6", command=)
-calculate.grid(row=, column=, columnspan=)
+num6 = tk.Button(root, text="6")
+num6.grid(row=3, column=3)
 
-calculate = tk.Button(root, text="7", command=)
-calculate.grid(row=, column=, columnspan=)
+num6 = tk.Button(root, text="7")
+num6.grid(row=4, column=1)
 
-calculate = tk.Button(root, text="8", command=)
-calculate.grid(row=, column=, columnspan=)
+num7 = tk.Button(root, text="8")
+num7.grid(row=4, column=2)
 
-calculate = tk.Button(root, text="9", command=)
-calculate.grid(row=, column=, columnspan=)
-
-
-
+num9 = tk.Button(root, text="9")
+num9.grid(row=4, column=3)
 
 
 root.mainloop()
