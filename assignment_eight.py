@@ -62,6 +62,33 @@ def press_divide():
     text = entry.get()
     text += "/"
     entry.set(text)
+# could be made cleaner so it does this when calculate is pressed however i dont know how to set it up for more than one factorial
+def press_factorial():
+    # could be made cleaner so it does this when calculate is pressed however i dont know how to set it up for more than one factorial
+    text = entry.get()
+    x = int(text[-1])
+    fact = ""
+    while x > 1:
+        fact +="*"
+        fact += str(x-1)
+        x = x-1
+    text += str(fact)
+    entry.set(text)
+def press_squared():
+    pass
+def press_clear():
+    text = ""
+    entry.set(text)
+def press_del():
+    text = entry.get()
+    text = text[0:len(text)-1]
+    entry.set(text)
+def press_calculate():
+    text = entry.get()
+    text = eval(text)
+    entry.set(text)
+
+
 # text box
 entry_box = tk.Entry(root, text=entry)
 entry_box.grid(row=1, column=1, columnspan=3)
@@ -79,7 +106,19 @@ multiply.grid(row=2, column=5)
 divide = tk.Button(root, text="/", command=press_divide)
 divide.grid(row=3, column=5)
 
-calculate = tk.Button(root, text="=")
+factorial = tk.Button(root, text="!", command=press_factorial)
+factorial.grid(row=4, column=6)
+
+factorial = tk.Button(root, text="^2", command=press_squared)
+factorial.grid(row=3, column=6)
+
+calculate = tk.Button(root, text="clear", command=press_clear)
+calculate.grid(row=1, column=5, columnspan=2)
+
+calculate = tk.Button(root, text="del", command=press_del)
+calculate.grid(row=1, column=4)
+
+calculate = tk.Button(root, text="=", command=press_calculate)
 calculate.grid(row=4, column=5)
 
 # numbers
