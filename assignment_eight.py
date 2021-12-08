@@ -62,20 +62,33 @@ def press_divide():
     text = entry.get()
     text += "/"
     entry.set(text)
-# could be made cleaner so it does this when calculate is pressed however i dont know how to set it up for more than one factorial
+
 def press_factorial():
     # could be made cleaner so it does this when calculate is pressed however i dont know how to set it up for more than one factorial
     text = entry.get()
     x = int(text[-1])
     fact = ""
+    num = text[-1]
+    text = text[0:len(text)-1]
+    text += "("
+    text += num
     while x > 1:
         fact +="*"
         fact += str(x-1)
         x = x-1
     text += str(fact)
+    text +=")"
     entry.set(text)
 def press_squared():
-    pass
+    text = entry.get()
+    num = find_number
+    text = text[0:len(text)-1]
+    text += "("
+    text += num
+    text += "*"
+    text += num
+    text += ")"
+    entry.set(text)
 def press_clear():
     text = ""
     entry.set(text)
@@ -88,6 +101,20 @@ def press_calculate():
     text = eval(text)
     entry.set(text)
 
+# extra
+
+def find_number():
+    text = entry.get
+    all_nums = "01234567789"
+    number_flip = ""
+    number = ""
+    t = 0
+    x = text[-1]
+    while x in all_nums:
+        number_flip += x
+        number += number
+        t = t + 1
+        x = text[-1 - t]
 
 # text box
 entry_box = tk.Entry(root, text=entry)
